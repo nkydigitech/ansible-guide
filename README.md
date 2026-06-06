@@ -46,6 +46,16 @@ mkdocs serve
 
 Open `http://127.0.0.1:8000`
 
+## 🌐 Deployment
+
+This site is built with MkDocs and deployed to GitHub Pages automatically via GitHub Actions.
+
+**Required GitHub Pages setting:**
+- Go to **Settings → Pages**.
+- Under **Build and deployment → Source**, select **Deploy from a branch**.
+- Choose the **`gh-pages`** branch and **/(root)** folder.
+- The workflow (`.github/workflows/deploy.yml`) pushes the built site to `gh-pages` on every push to `main`. Do not use the default Jekyll build.
+
 ## 🤝 Contributing
 
 Found an error? Want to add a module? PRs welcome.
