@@ -1,0 +1,78 @@
+site_name: Ansible Learning Guide
+site_url: https://nkydigitech.github.io/ansible-guide
+site_description: Free beginner-to-advanced Ansible guide with hands-on playbooks
+site_author: Nkechi Ahanonye
+repo_name: nkydigitech/ansible-guide
+repo_url: https://github.com/nkydigitech/ansible-guide
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: custom
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/nkechiahanonye
+    - icon: fontawesome/brands/github
+      link: https://github.com/nkydigitech
+
+nav:
+  - Home: index.md
+  - '01 Introduction': 01-introduction.md
+  - '02 Installation': 02-installation.md
+  - '03 Ad-hoc Commands': 03-ad-hoc-commands.md
+  - '04 Inventory': 04-inventory.md
+  - '05 First Playbook': 05-first-playbook.md
+  - '06 Variables': 06-variables.md
+  - '07 Handlers': 07-handlers.md
+  - '08 Roles': 08-roles.md
+  - '09 Templates & Jinja2': 09-templates-jinja2.md
+  - '10 Conditionals & Loops': 10-conditionals-loops.md
+  - '11 Vault': 11-vault.md
+  - '12 Error Handling': 12-error-handling.md
+  - '13 Dynamic Inventory': 13-dynamic-inventory.md
+  - '14 Collections': 14-collections.md
+  - '15 Capstone Project': 15-capstone-project.md
