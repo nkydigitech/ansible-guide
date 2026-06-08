@@ -343,3 +343,32 @@
   .module-grid   { grid-template-columns: 1fr; }
   .author-card   { flex-direction: column; text-align: center; }
 }
+
+/* ── Module cards as links ── */
+a.module-card {
+  text-decoration: none !important;
+  display: block;
+  color: inherit !important;
+}
+
+a.module-card h3 {
+  color: #e6edf3 !important;
+}
+
+a.module-card:hover h3 {
+  color: #ff6b2b !important;
+}
+
+/* ── Fix hero CTA z-index on mobile ── */
+.hero-cta {
+  position: relative;
+  z-index: 10 !important;
+  display: inline-block !important;
+  pointer-events: all !important;
+}
+
+.hero::before,
+.hero::after {
+  pointer-events: none !important;
+  z-index: 0 !important;
+}

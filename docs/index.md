@@ -35,46 +35,81 @@ hide:
 Every module shows you **exactly what to expect** — real terminal output, not just code blocks. You see what success looks like before you run a single command.
 
 <div class="module-grid">
-  <div class="module-card">
+  <a href="01-introduction/" class="module-card">
     <div class="module-number">Module 01</div>
     <h3>Introduction</h3>
     <p>What Ansible is, why it exists, and how it thinks differently about automation.</p>
-  </div>
-  <div class="module-card">
+  </a>
+  <a href="02-installation/" class="module-card">
     <div class="module-number">Module 02</div>
     <h3>Installation</h3>
     <p>Get Ansible running on Linux, Mac, and Windows WSL with verified output.</p>
-  </div>
-  <div class="module-card">
+  </a>
+  <a href="03-ad-hoc-commands/" class="module-card">
     <div class="module-number">Module 03</div>
     <h3>Ad-hoc Commands</h3>
     <p>Run one-liners against real servers before writing a single playbook.</p>
-  </div>
-  <div class="module-card">
+  </a>
+  <a href="04-inventory/" class="module-card">
     <div class="module-number">Module 04</div>
     <h3>Inventory</h3>
     <p>Tell Ansible which servers to talk to — static, grouped, and dynamic.</p>
-  </div>
-  <div class="module-card">
+  </a>
+  <a href="05-first-playbook/" class="module-card">
     <div class="module-number">Module 05</div>
     <h3>First Playbook</h3>
     <p>Write your first YAML playbook and deploy something real in minutes.</p>
-  </div>
-  <div class="module-card">
-    <div class="module-number">Module 06–10</div>
-    <h3>Core Concepts</h3>
-    <p>Variables, handlers, roles, Jinja2 templates, conditionals and loops.</p>
-  </div>
-  <div class="module-card">
-    <div class="module-number">Module 11–14</div>
-    <h3>Advanced Skills</h3>
-    <p>Vault secrets, error handling, dynamic inventory, and collections.</p>
-  </div>
-  <div class="module-card">
+  </a>
+  <a href="06-variables/" class="module-card">
+    <div class="module-number">Module 06</div>
+    <h3>Variables</h3>
+    <p>Define, scope, and override variables across inventory, playbooks and roles.</p>
+  </a>
+  <a href="07-handlers/" class="module-card">
+    <div class="module-number">Module 07</div>
+    <h3>Handlers</h3>
+    <p>Trigger actions only when changes happen — restart services the right way.</p>
+  </a>
+  <a href="08-roles/" class="module-card">
+    <div class="module-number">Module 08</div>
+    <h3>Roles</h3>
+    <p>Organise playbooks into reusable, shareable role structures.</p>
+  </a>
+  <a href="09-templates-jinja2/" class="module-card">
+    <div class="module-number">Module 09</div>
+    <h3>Templates & Jinja2</h3>
+    <p>Generate dynamic config files using Jinja2 expressions and filters.</p>
+  </a>
+  <a href="10-conditionals-loops/" class="module-card">
+    <div class="module-number">Module 10</div>
+    <h3>Conditionals & Loops</h3>
+    <p>Control task execution with when clauses and loop over lists and dicts.</p>
+  </a>
+  <a href="11-vault/" class="module-card">
+    <div class="module-number">Module 11</div>
+    <h3>Vault</h3>
+    <p>Encrypt secrets and sensitive data so you can safely commit them to git.</p>
+  </a>
+  <a href="12-error-handling/" class="module-card">
+    <div class="module-number">Module 12</div>
+    <h3>Error Handling</h3>
+    <p>Control failures, ignore errors selectively, and rescue broken tasks.</p>
+  </a>
+  <a href="13-dynamic-inventory/" class="module-card">
+    <div class="module-number">Module 13</div>
+    <h3>Dynamic Inventory</h3>
+    <p>Pull live host lists from AWS, GCP, Azure and other cloud providers.</p>
+  </a>
+  <a href="14-collections/" class="module-card">
+    <div class="module-number">Module 14</div>
+    <h3>Collections</h3>
+    <p>Install, use, and manage Ansible Galaxy collections in your projects.</p>
+  </a>
+  <a href="15-capstone-project/" class="module-card">
     <div class="module-number">Module 15</div>
     <h3>Capstone Project</h3>
     <p>Build a full production infrastructure from scratch using everything you learned.</p>
-  </div>
+  </a>
 </div>
 
 ## What you will see in every module
@@ -101,8 +136,8 @@ Every module shows you **exactly what to expect** — real terminal output, not 
     <span class="ok">changed: [web01]</span><br>
     <span class="ok">changed: [web02]</span><br><br>
     <span class="info">PLAY RECAP *****************************************************</span><br>
-    <span class="ok">web01 : ok=2 changed=1 unreachable=0 failed=0</span><br>
-    <span class="ok">web02 : ok=2 changed=1 unreachable=0 failed=0</span>
+    <span class="ok">web01 : ok=2  changed=1  unreachable=0  failed=0</span><br>
+    <span class="ok">web02 : ok=2  changed=1  unreachable=0  failed=0</span>
   </div>
 </div>
 
