@@ -1,0 +1,51 @@
+---
+# Module 05: Your First Ansible Playbook
+# Safe to run on localhost (no sudo, no package installs).
+# Demonstrates: a play, tasks, variables, a handler, register + debug.
+#
+# Run it:
+#   ansible-playbook -i ../../inventory/hosts.ini first-playbook.yml
+# Preview only (no changes):
+#   ansible-playbook -i ../../inventory/hosts.ini first-playbook.yml --check --diff
+
+- name: My first playbook (localhost-safe demo)
+  hosts: local
+  gather_facts: yes
+  become: no
+
+  vars:
+    app_dir: /tmp/ansible-first-playbook
+    config_src: files/sample.conf
+    config_dest: /tmp/ansible-first-playbook/sample.conf
+
+  tasks:
+    - name: Show which host and OS we are running on
+      ansible.builtin.debug:
+        msg: "Running on {{ ansible_facts['hostname'] }} ({{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }})"
+
+    - name: Create the application directory
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Deploy the configuration file
+      ansible.builtin.copy:
+        src: "{{ config_src }}"
+        dest: "{{ config_dest }}"
+        mode: '0644'
+      notify: Confirm config changed
+
+    - name: Read the deployed config back
+      ansible.builtin.command: "cat {{ config_dest }}"
+      register: config_contents
+      changed_when: false
+
+    - name: Display the config contents
+      ansible.builtin.debug:
+        var: config_contents.stdout_lines
+
+  handlers:
+    - name: Confirm config changed
+      ansible.builtin.debug:
+        msg: "Handler fired: the config file was created or changed."
