@@ -1,0 +1,30 @@
+---
+# Exercise 3: Register and Reuse Task Output
+# Captures date and whoami output, then displays them.
+#
+# Run:
+#   ansible-playbook -i ../../inventory/hosts.ini exercise-03-register.yml
+
+- name: Register and reuse task output
+  hosts: local
+  gather_facts: no
+
+  tasks:
+    - name: Get current date
+      ansible.builtin.command: date
+      register: current_date
+      changed_when: false
+
+    - name: Get current user
+      ansible.builtin.command: whoami
+      register: current_user
+      changed_when: false
+
+    - name: Display system information
+      ansible.builtin.debug:
+        msg: "Current date: {{ current_date.stdout }}, running as: {{ current_user.stdout }}"
+
+    - name: Security check
+      ansible.builtin.debug:
+        msg: "Running with elevated privileges"
+      when: current_user.stdout == "root" or current_user.stdout == "nkydigitech"

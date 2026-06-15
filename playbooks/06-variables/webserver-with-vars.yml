@@ -1,0 +1,66 @@
+---
+# Module 06 (real server): install nginx and deploy a variable-driven landing page.
+# REQUIRES SUDO on the target. DO NOT RUN ON LOCALHOST.
+# COST WARNING: running this against a cloud server (e.g., AWS EC2) may incur
+# charges. Stop or terminate the instance when finished. See README.md.
+#
+# Run it against EC2 (see README for inventory setup):
+#   ansible-playbook -i ../../inventory/ec2.ini webserver-with-vars.yml --check --diff   # preview
+#   ansible-playbook -i ../../inventory/ec2.ini webserver-with-vars.yml                  # apply
+
+- name: Install nginx and deploy variable-driven landing page (real server)
+  hosts: webservers
+  become: yes
+  gather_facts: yes
+
+  vars:
+    nginx_port: 80
+    page_title: "Deployed by Ansible"
+    page_color: "#2ecc71"
+
+  tasks:
+    - name: Update apt cache (Debian/Ubuntu)
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      when: ansible_facts['os_family'] == "Debian"
+
+    - name: Install Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+      when: ansible_facts['os_family'] == "Debian"
+      notify: Restart nginx
+
+    - name: Deploy a variable-driven landing page
+      ansible.builtin.copy:
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head><title>{{ page_title }}</title></head>
+          <body style="background:{{ page_color }};color:#fff;font-family:sans-serif;text-align:center;padding-top:20vh;">
+            <h1>{{ page_title }}</h1>
+            <p>Host: {{ inventory_hostname }}</p>
+            <p>Port: {{ nginx_port }}</p>
+          </body>
+          </html>
+        dest: /var/www/html/index.nginx-debian.html
+        mode: '0644'
+      notify: Restart nginx
+
+    - name: Ensure Nginx is running and enabled at boot
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Verify Nginx answers on port {{ nginx_port }}
+      ansible.builtin.uri:
+        url: "http://localhost:{{ nginx_port }}"
+        status_code: 200
+
+  handlers:
+    - name: Restart nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted

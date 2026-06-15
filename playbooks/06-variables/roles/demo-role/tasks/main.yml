@@ -1,0 +1,4 @@
+---
+- name: Show resolved variable value
+  ansible.builtin.debug:
+    msg: "{{ demo_message }}"

@@ -1,0 +1,17 @@
+---
+# Exercise 2: Inventory Variables and group_vars
+# Shows how group_vars configure different settings per environment.
+#
+# Run against dev:
+#   ansible-playbook -i exercise-02/inventory/hosts exercise-02-group-vars.yml -l dev_servers
+# Run against prod:
+#   ansible-playbook -i exercise-02/inventory/hosts exercise-02-group-vars.yml -l prod_servers
+
+- name: Configure servers
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Display environment configuration
+      ansible.builtin.debug:
+        msg: "Environment: {{ deploy_env }}, Log Level: {{ log_level }}, App: {{ app_name }}"

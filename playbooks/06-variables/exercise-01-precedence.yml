@@ -1,0 +1,16 @@
+---
+# Exercise 1: Variable Precedence Demo
+# Shows that extra vars override play vars, which override role defaults.
+#
+# Run default (play vars win):
+#   ansible-playbook -i ../../inventory/hosts.ini exercise-01-precedence.yml
+# Run with extra vars (extra vars win):
+#   ansible-playbook -i ../../inventory/hosts.ini exercise-01-precedence.yml -e "demo_message=from extra vars"
+
+- name: Variable precedence demo
+  hosts: local
+  gather_facts: no
+  vars:
+    demo_message: "from play"
+  roles:
+    - demo-role

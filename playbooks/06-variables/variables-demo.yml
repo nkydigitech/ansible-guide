@@ -1,0 +1,54 @@
+---
+# Module 06: Variables
+# Safe to run on localhost (no sudo, no package installs).
+# Demonstrates: play vars, extra vars, magic variables, debug, idempotency.
+#
+# Run it:
+#   ansible-playbook -i ../../inventory/hosts.ini variables-demo.yml
+# Run with extra vars to see override:
+#   ansible-playbook -i ../../inventory/hosts.ini variables-demo.yml -e "demo_version=2.0.0"
+# Preview only (no changes):
+#   ansible-playbook -i ../../inventory/hosts.ini variables-demo.yml --check --diff
+
+- name: Variables demo (localhost-safe)
+  hosts: local
+  gather_facts: yes
+  become: no
+
+  vars:
+    demo_app_name: MyApp
+    demo_version: "1.0.0"
+    demo_dir: /tmp/ansible-variables-demo
+
+  tasks:
+    - name: Show where we are running
+      ansible.builtin.debug:
+        msg: "Running on {{ inventory_hostname }} ({{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }})"
+
+    - name: Show play-level variables
+      ansible.builtin.debug:
+        msg: "App: {{ demo_app_name }}, Version: {{ demo_version }}"
+
+    - name: Create demo directory
+      ansible.builtin.file:
+        path: "{{ demo_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Deploy a variable-driven config file
+      ansible.builtin.copy:
+        content: |
+          app_name={{ demo_app_name }}
+          version={{ demo_version }}
+          host={{ inventory_hostname }}
+        dest: "{{ demo_dir }}/config.txt"
+        mode: '0644'
+
+    - name: Read the config back
+      ansible.builtin.command: "cat {{ demo_dir }}/config.txt"
+      register: config_output
+      changed_when: false
+
+    - name: Display the config contents
+      ansible.builtin.debug:
+        var: config_output.stdout_lines

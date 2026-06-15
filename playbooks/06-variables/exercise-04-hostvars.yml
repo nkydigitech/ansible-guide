@@ -1,0 +1,29 @@
+---
+# Exercise 4: Magic Variables with hostvars
+# Shows how to reference facts from other hosts using hostvars.
+#
+# Run:
+#   ansible-playbook -i exercise-04/inventory/hosts exercise-04-hostvars.yml
+
+- name: Gather facts from all webservers
+  hosts: webservers
+  gather_facts: yes
+
+- name: Display webserver information from localhost
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: List all webservers
+      ansible.builtin.debug:
+        msg: "Webservers group: {{ groups['webservers'] }}"
+
+    - name: Display hostname of each webserver
+      ansible.builtin.debug:
+        msg: "{{ item }} hostname: {{ hostvars[item]['ansible_facts']['hostname'] }}"
+      loop: "{{ groups['webservers'] }}"
+
+    - name: Display memory for each webserver
+      ansible.builtin.debug:
+        msg: "{{ item }} memory: {{ hostvars[item]['ansible_facts']['memtotal_mb'] }} MB"
+      loop: "{{ groups['webservers'] }}"

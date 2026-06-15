@@ -1,0 +1,17 @@
+---
+# Exercise 5: Default Values with Jinja2 Filters
+# Shows how default() handles undefined variables gracefully.
+#
+# Run with default (success, uses 5432):
+#   ansible-playbook -i ../../inventory/hosts.ini exercise-05-defaults.yml
+# Run with override (uses 5433):
+#   ansible-playbook -i ../../inventory/hosts.ini exercise-05-defaults.yml -e "db_port=5433"
+
+- name: Default values with Jinja2 filters
+  hosts: local
+  gather_facts: no
+
+  tasks:
+    - name: Connect to database using default port
+      ansible.builtin.debug:
+        msg: "Connecting to database on port {{ db_port | default(5432) }}"
