@@ -198,6 +198,72 @@ python3 --version
 pip3 --version
 ```
 
+---
+
+## 🚀 Quick First Test — Make Ansible Do Something Real
+
+Running `ansible --version` proves Ansible is installed. It does **not** prove you can use it.
+
+The very next thing you should do is make Ansible perform a real action and verify the result with your own eyes. There are two paths depending on your environment:
+
+### Path A — Native Install (Ubuntu/Debian VM or WSL with `sudo`)
+
+Run these three commands in order:
+
+```bash
+# 1. Install nginx using Ansible
+ansible localhost -m ansible.builtin.apt \
+  -a "name=nginx state=present update_cache=yes" \
+  --become
+
+# 2. Start the nginx service
+ansible localhost -m ansible.builtin.systemd \
+  -a "name=nginx state=started enabled=yes" \
+  --become
+
+# 3. Check it's serving
+ansible localhost -m ansible.builtin.uri \
+  -a "url=http://localhost return_content=yes" \
+  --become
+```
+
+**Expected output from Step 3:**
+```json
+localhost | SUCCESS => {
+    "changed": false,
+    "content": "<!DOCTYPE html>...",
+    "status": 200
+}
+```
+
+**Now browse to `http://localhost`.** You should see the nginx welcome page.
+
+### Path B — Docker Fallback (Codespaces or restricted environments)
+
+If `sudo apt-get` is blocked, use Docker:
+
+```bash
+# 1. Start nginx in Docker
+docker run -d --name first-nginx -p 8080:80 nginx:alpine
+
+# 2. Prove Ansible can reach localhost and run commands
+ansible localhost -m ansible.builtin.command \
+  -a "docker exec first-nginx nginx -v"
+
+# 3. Verify with curl
+curl -s http://localhost:8080 | head -5
+```
+
+**Expected output from Step 2:**
+```
+localhost | CHANGED | rc=0 >>
+nginx version: nginx/1.31.1
+```
+
+**Now browse to `http://localhost:8080`.** You should see the nginx welcome page.
+
+Follow the full step-by-step guide with screenshots at [playbooks/02-installation/README.md](../../playbooks/02-installation/README.md).
+
 ### Understanding Ansible Commands
 
 After installation, you'll have several new commands available:
@@ -501,6 +567,42 @@ ansible-galaxy collection list
 3. If it fails, troubleshoot using SSH manually
 
 **Hint**: The most common connectivity issue is SSH keys. Verify you can SSH to the target manually first. If password authentication is required, you may need to install `sshpass` or configure SSH keys.
+
+## Module Review — Test Yourself
+
+??? question "Q1: What is the difference between `ansible`, `ansible-playbook`, and `ansible-galaxy`?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        - **`ansible`** — Runs one-off ad-hoc commands (quick tasks you don't save).
+        - **`ansible-playbook`** — Runs saved automation scripts written in YAML.
+        - **`ansible-galaxy`** — Manages downloadable roles and collections from the community.
+
+??? question "Q2: You ran `ansible --version` and got `command not found`. What should you check first?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        Run `python3 --version` and `pip3 --version` to make sure Python is installed. Then reinstall Ansible using your system's package manager or `pip3 install ansible`.
+
+??? question "Q3: You created a Docker container for testing. What must be installed inside the container before Ansible can manage it?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        An **SSH server** (`openssh-server`). Ansible connects to target hosts over SSH by default.
+
+??? question "Q4: Which task runs BEFORE any role in a playbook?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        **`pre_tasks`**. They run first, then roles, then regular `tasks`, then `post_tasks`, then handlers.
+
+??? question "Q5: What does `CHANGED` in Ansible output mean?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        Ansible made a change to the target system. If you run the same command again, it should show `ok` (no changes needed) — this is called **idempotency**.
+
+---
 
 ## Summary
 
