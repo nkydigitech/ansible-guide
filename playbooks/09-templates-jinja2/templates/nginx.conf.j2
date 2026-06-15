@@ -1,0 +1,36 @@
+user www-data;
+worker_processes {{ ansible_facts['processor_vcpus'] | default(1) }};
+pid /run/nginx.pid;
+
+events {
+    worker_connections {{ max_connections }};
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    sendfile      on;
+    keepalive_timeout {{ keepalive_timeout }};
+
+    server {
+        listen {{ http_port }};
+        server_name {{ server_name }};
+        root {{ document_root }};
+        index index.html;
+
+{%- if enable_gzip %}
+        gzip on;
+        gzip_types text/plain text/css application/json;
+{%- endif %}
+
+{%- if enable_ssl %}
+        listen 443 ssl;
+        ssl_certificate /etc/ssl/certs/server.crt;
+        ssl_certificate_key /etc/ssl/private/server.key;
+{%- endif %}
+
+        location / {
+            try_files $uri $uri/ =404;
+        }
+    }
+}

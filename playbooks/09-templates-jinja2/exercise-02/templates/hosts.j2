@@ -1,0 +1,5 @@
+# Generated hosts file
+{% for server in servers %}
+{{ server.ip }} {{ server.name }}
+{% endfor %}
+# Total servers: {{ servers | length }}

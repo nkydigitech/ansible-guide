@@ -1,0 +1,10 @@
+# Health Check Config
+port = {{ rate_limit | int }}
+{%- if ssl_enabled | bool %}
+ssl = enabled
+ssl_cert = /etc/ssl/cert.pem
+{%- endif %}
+{%- if basic_auth | bool %}
+auth = basic
+auth_file = /etc/auth/users
+{%- endif %}

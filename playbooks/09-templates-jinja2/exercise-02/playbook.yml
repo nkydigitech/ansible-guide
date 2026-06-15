@@ -1,0 +1,36 @@
+---
+# Exercise 2: Loop Over a List
+# Goal: Generate /etc/hosts style file from inventory data
+
+- name: Exercise 2 — Loop in template
+  hosts: localhost
+  gather_facts: no
+  vars:
+    servers:
+      - name: web01
+        ip: 10.0.1.10
+      - name: web02
+        ip: 10.0.1.11
+      - name: db01
+        ip: 10.0.1.20
+  tasks:
+    - name: Create output directory
+      ansible.builtin.file:
+        path: /tmp/template-ex-02
+        state: directory
+        mode: '0755'
+
+    - name: Deploy hosts template
+      ansible.builtin.template:
+        src: templates/hosts.j2
+        dest: /tmp/template-ex-02/hosts.conf
+        mode: '0644'
+
+    - name: Show rendered file
+      ansible.builtin.command: "cat /tmp/template-ex-02/hosts.conf"
+      register: output
+      changed_when: false
+
+    - name: Display output
+      ansible.builtin.debug:
+        var: output.stdout_lines

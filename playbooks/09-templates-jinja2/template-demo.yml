@@ -1,0 +1,47 @@
+---
+# Module 09: Templates & Jinja2 Demo (localhost-safe)
+# Shows variable substitution, filters, conditionals, loops, and whitespace control
+
+- name: Template demo — render dynamic config files
+  hosts: localhost
+  gather_facts: no
+  vars:
+    app_name: "MyApp"
+    app_version: "2.1.0"
+    listen_port: 8080
+    enable_logging: true
+    enable_debug: false
+    upstreams:
+      - host: 10.0.1.10
+        port: 9000
+      - host: 10.0.1.11
+        port: 9000
+
+  tasks:
+    - name: Create demo directory
+      ansible.builtin.file:
+        path: /tmp/ansible-template-demo
+        state: directory
+        mode: '0755'
+
+    - name: Deploy app config template
+      ansible.builtin.template:
+        src: app_config.conf.j2
+        dest: /tmp/ansible-template-demo/app_config.conf
+        mode: '0644'
+
+    - name: Show rendered output
+      ansible.builtin.command: "cat /tmp/ansible-template-demo/app_config.conf"
+      register: rendered_config
+      changed_when: false
+
+    - name: Display rendered config
+      ansible.builtin.debug:
+        var: rendered_config.stdout_lines
+
+    - name: Show that filters work
+      ansible.builtin.debug:
+        msg:
+          - "Upper: {{ app_name | upper }}"
+          - "Default port: {{ missing_port | default('3000') }}"
+          - "Join upstreams: {{ upstreams | map(attribute='host') | join(', ') }}"

@@ -1,0 +1,48 @@
+---
+# Exercise 4: Whitespace Control
+# Goal: Compare template with and without whitespace control
+
+- name: Exercise 4 — Whitespace control comparison
+  hosts: localhost
+  gather_facts: no
+  vars:
+    features:
+      - logging
+      - caching
+      - monitoring
+  tasks:
+    - name: Create output directory
+      ansible.builtin.file:
+        path: /tmp/template-ex-04
+        state: directory
+        mode: '0755'
+
+    - name: Deploy template WITHOUT whitespace control
+      ansible.builtin.template:
+        src: templates/noisy.conf.j2
+        dest: /tmp/template-ex-04/noisy.conf
+        mode: '0644'
+
+    - name: Deploy template WITH whitespace control
+      ansible.builtin.template:
+        src: templates/clean.conf.j2
+        dest: /tmp/template-ex-04/clean.conf
+        mode: '0644'
+
+    - name: Show noisy output
+      ansible.builtin.command: "cat -A /tmp/template-ex-04/noisy.conf"
+      register: noisy
+      changed_when: false
+
+    - name: Show clean output
+      ansible.builtin.command: "cat -A /tmp/template-ex-04/clean.conf"
+      register: clean
+      changed_when: false
+
+    - name: Compare
+      ansible.builtin.debug:
+        msg:
+          - "=== NOISY (has blank lines) ==="
+          - "{{ noisy.stdout_lines }}"
+          - "=== CLEAN (no blank lines) ==="
+          - "{{ clean.stdout_lines }}"

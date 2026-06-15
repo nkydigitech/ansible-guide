@@ -1,0 +1,44 @@
+---
+# Module 09: Real Server Template Demo (EC2)
+# Deploys nginx config via template on an Ubuntu EC2 instance.
+# Do NOT run against localhost.
+
+- name: Deploy nginx with Jinja2 template
+  hosts: webservers
+  become: true
+
+  vars:
+    http_port: 80
+    server_name: "{{ inventory_hostname }}"
+    document_root: /var/www/html
+    enable_ssl: false
+    enable_gzip: true
+    max_connections: 1024
+    keepalive_timeout: 65
+
+  tasks:
+    - name: Install nginx
+      ansible.builtin.package:
+        name: nginx
+        state: present
+
+    - name: Deploy nginx config from template
+      ansible.builtin.template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: '0644'
+      notify: Restart nginx
+
+    - name: Ensure nginx is running
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: Restart nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted

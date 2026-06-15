@@ -1,0 +1,32 @@
+---
+# Exercise 3: Conditional Sections
+# Goal: Include/exclude config sections based on booleans
+
+- name: Exercise 3 — Conditional blocks in template
+  hosts: localhost
+  gather_facts: no
+  vars:
+    ssl_enabled: true
+    rate_limit: 100
+    basic_auth: false
+  tasks:
+    - name: Create output directory
+      ansible.builtin.file:
+        path: /tmp/template-ex-03
+        state: directory
+        mode: '0755'
+
+    - name: Deploy healthcheck template
+      ansible.builtin.template:
+        src: templates/healthcheck.conf.j2
+        dest: /tmp/template-ex-03/healthcheck.conf
+        mode: '0644'
+
+    - name: Show rendered file
+      ansible.builtin.command: "cat /tmp/template-ex-03/healthcheck.conf"
+      register: output
+      changed_when: false
+
+    - name: Display output
+      ansible.builtin.debug:
+        var: output.stdout_lines

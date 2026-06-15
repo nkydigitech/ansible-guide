@@ -1,0 +1,8 @@
+# HAProxy Config
+{%- for app in applications %}
+backend {{ app.name }}
+  listen {{ app.port }}
+{%- for backend in app.backends %}
+  server {{ backend.host }}:{{ backend.port }}
+{%- endfor %}
+{%- endfor %}

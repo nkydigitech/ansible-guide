@@ -1,0 +1,6 @@
+# App Config
+app = {{ app_name | upper }}
+version = {{ app_version }}
+port = {{ listen_port | int }}
+max_connections = {{ max_conn | default(1000) }}
+status = {{ missing_var | default('active') | upper }}
