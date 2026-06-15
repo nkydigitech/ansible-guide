@@ -1,0 +1,38 @@
+---
+# Exercise 5: Handler Debugging
+# Goal: changed_when: false suppresses handler notifications
+
+- name: Exercise 5A — Handler suppressed (broken)
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Update config (but suppress changed detection)
+      ansible.builtin.copy:
+        content: "debug=false\n"
+        dest: /tmp/handler-ex-05/config.conf
+        mode: '0644'
+      changed_when: false
+      notify: Should fire but won't
+
+  handlers:
+    - name: Should fire but won't
+      ansible.builtin.debug:
+        msg: "❌ This handler will NOT fire because changed_when: false"
+
+- name: Exercise 5B — Handler restored (fixed)
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Update config (normal change detection)
+      ansible.builtin.copy:
+        content: "debug=true\n"
+        dest: /tmp/handler-ex-05/config.conf
+        mode: '0644'
+      notify: Now it fires
+
+  handlers:
+    - name: Now it fires
+      ansible.builtin.debug:
+        msg: "✅ Handler fired! changed_when was removed."

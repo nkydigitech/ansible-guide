@@ -1,0 +1,17 @@
+---
+- name: Create demo directory
+  ansible.builtin.file:
+    path: /tmp/ansible-handler-demo
+    state: directory
+    mode: '0755'
+
+- name: Deploy initial config
+  ansible.builtin.copy:
+    content: "port=8080\n"
+    dest: /tmp/ansible-handler-demo/app.conf
+    mode: '0644'
+  notify: Simulate service restart
+
+- name: Show that handler has NOT run yet (it runs at end of play)
+  ansible.builtin.debug:
+    msg: "Handlers will run after ALL tasks complete, unless you use meta: flush_handlers"

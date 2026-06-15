@@ -1,0 +1,11 @@
+---
+- name: Simulate service restart
+  ansible.builtin.copy:
+    content: "Restarted at {{ lookup('pipe', 'date -Iseconds') }}\n"
+    dest: /tmp/ansible-handler-demo/restart.log
+    mode: '0644'
+
+- name: Notify multiple handlers
+  ansible.builtin.debug:
+    msg: "🔔 Handler 2: secondary action fired"
+  listen: multi-reload

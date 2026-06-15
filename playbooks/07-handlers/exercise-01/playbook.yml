@@ -1,0 +1,26 @@
+---
+# Exercise 1: First Handler
+# Goal: Handler fires only when config changes, not on idempotent re-runs
+
+- name: Exercise 1 — Handler fires on change only
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Create demo directory
+      ansible.builtin.file:
+        path: /tmp/handler-ex-01
+        state: directory
+        mode: '0755'
+
+    - name: Deploy config file
+      ansible.builtin.copy:
+        content: "server_name=localhost\n"
+        dest: /tmp/handler-ex-01/nginx.conf
+        mode: '0644'
+      notify: Restart nginx mock
+
+  handlers:
+    - name: Restart nginx mock
+      ansible.builtin.debug:
+        msg: "🔄 Handler fired: nginx would restart (config changed)"

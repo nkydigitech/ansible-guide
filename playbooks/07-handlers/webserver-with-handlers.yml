@@ -1,0 +1,50 @@
+---
+# Module 07: Real Server Handler Demo (EC2)
+# Do NOT run against localhost — it needs sudo and a real package manager.
+
+- name: Deploy nginx with handler on EC2
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install nginx
+      ansible.builtin.package:
+        name: nginx
+        state: present
+
+    - name: Deploy nginx config
+      ansible.builtin.copy:
+        content: |
+          server {
+            listen 80;
+            root /var/www/html;
+            index index.html;
+          }
+        dest: /etc/nginx/sites-enabled/default
+        mode: '0644'
+      notify: Restart nginx
+
+    - name: Ensure nginx is running
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy landing page
+      ansible.builtin.copy:
+        content: |
+          <h1>Handler Demo Active</h1>
+          <p>If nginx restarted, the handler worked.</p>
+        dest: /var/www/html/index.html
+        mode: '0644'
+
+    - name: Verify site is live
+      ansible.builtin.uri:
+        url: "http://{{ inventory_hostname }}"
+        status_code: 200
+
+  handlers:
+    - name: Restart nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted

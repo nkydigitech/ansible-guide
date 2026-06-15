@@ -1,0 +1,35 @@
+---
+# Exercise 4: Handler Dependencies with flush
+# Goal: Order matters — base handler must run first
+
+- name: Exercise 4 — Handler dependencies
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Setup base config
+      ansible.builtin.copy:
+        content: "base=ok\n"
+        dest: /tmp/handler-ex-04/base.conf
+        mode: '0644'
+      notify: Initialize base config
+
+    - name: Flush so base handler runs first
+      ansible.builtin.meta: flush_handlers
+
+    - name: Setup app config
+      ansible.builtin.copy:
+        content: "app=ready\n"
+        dest: /tmp/handler-ex-04/app.conf
+        mode: '0644'
+      notify: Start application
+
+  handlers:
+    - name: Initialize base config
+      ansible.builtin.set_fact:
+        base_ready: true
+
+    - name: Start application
+      ansible.builtin.debug:
+        msg: "🚀 Application starting (base_ready = {{ base_ready | default(false) }})"
+      when: base_ready is defined

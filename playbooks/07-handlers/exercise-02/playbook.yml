@@ -1,0 +1,30 @@
+---
+# Exercise 2: Handler Flush
+# Goal: Use meta: flush_handlers to run handler immediately, then react to result
+
+- name: Exercise 2 — Flush handlers immediately
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Write app config
+      ansible.builtin.copy:
+        content: "version=1\n"
+        dest: /tmp/handler-ex-02/app.conf
+        mode: '0644'
+      notify: Set version fact
+
+    - name: Flush handlers NOW (before next task)
+      ansible.builtin.meta: flush_handlers
+
+    - name: Verify version was read
+      ansible.builtin.assert:
+        that:
+          - app_version == "1"
+        fail_msg: "Version was not set by handler"
+        success_msg: "✅ Version confirmed: {{ app_version }}"
+
+  handlers:
+    - name: Set version fact
+      ansible.builtin.set_fact:
+        app_version: "1"

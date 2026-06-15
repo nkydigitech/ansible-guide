@@ -1,0 +1,48 @@
+---
+# Module 07: Handlers Demo (localhost-safe)
+# Shows handler firing on change, idempotency, and meta: flush_handlers
+
+- name: Handler demo — config changes trigger restart
+  hosts: localhost
+  gather_facts: no
+
+  pre_tasks:
+    - name: Clean up from previous run
+      ansible.builtin.file:
+        path: /tmp/ansible-handler-demo
+        state: absent
+
+  roles:
+    - role: demo-handlers
+
+  tasks:
+    - name: Show what the role created
+      ansible.builtin.command: "cat /tmp/ansible-handler-demo/app.conf"
+      register: app_conf
+      changed_when: false
+
+    - name: Display current config
+      ansible.builtin.debug:
+        var: app_conf.stdout
+
+    - name: Modify config again to trigger handler a second time
+      ansible.builtin.copy:
+        content: "port=9090\n"
+        dest: /tmp/ansible-handler-demo/app.conf
+
+    - name: Flush handlers immediately
+      ansible.builtin.meta: flush_handlers
+
+    - name: Check restart log after flush
+      ansible.builtin.stat:
+        path: /tmp/ansible-handler-demo/restart.log
+      register: restart_log
+
+    - name: Show restart log exists
+      ansible.builtin.debug:
+        msg: "Restart log exists: {{ restart_log.stat.exists }} (should be true after flush)"
+
+  handlers:
+    - name: Final playbook-level handler
+      ansible.builtin.debug:
+        msg: "🔔 Playbook handler: final cleanup"

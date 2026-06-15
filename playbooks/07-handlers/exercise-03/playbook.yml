@@ -1,0 +1,40 @@
+---
+# Exercise 3: Multiple Handlers with Listening
+# Goal: Use listen to trigger multiple handlers from one notification
+
+- name: Exercise 3 — Handler listening pattern
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Update config A
+      ansible.builtin.file:
+        path: /tmp/handler-ex-03
+        state: directory
+        mode: '0755'
+      notify: infrastructure reload
+
+    - name: Update config B
+      ansible.builtin.copy:
+        content: "updated\n"
+        dest: /tmp/handler-ex-03/status.txt
+        mode: '0644'
+      notify: infrastructure reload
+
+    - name: Update config C
+      ansible.builtin.copy:
+        content: "ready\n"
+        dest: /tmp/handler-ex-03/ready.txt
+        mode: '0644'
+      notify: infrastructure reload
+
+  handlers:
+    - name: Reload web server
+      ansible.builtin.debug:
+        msg: "🔄 Handler 1: web server reloading"
+      listen: infrastructure reload
+
+    - name: Restart cache
+      ansible.builtin.debug:
+        msg: "🔄 Handler 2: cache service restarting"
+      listen: infrastructure reload
