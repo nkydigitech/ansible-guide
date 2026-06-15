@@ -1,0 +1,4 @@
+---
+- name: Simulate service restart
+  ansible.builtin.debug:
+    msg: "🔔 Handler fired: Service would restart because config changed"

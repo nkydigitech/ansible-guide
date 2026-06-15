@@ -1,0 +1,27 @@
+---
+- name: Exercise 4 — Execution order
+  hosts: localhost
+  gather_facts: no
+
+  pre_tasks:
+    - name: (PRE) Before the role
+      ansible.builtin.debug:
+        msg: "1️⃣ PRE_TASK runs first"
+
+  roles:
+    - role: simple-role
+
+  tasks:
+    - name: (TASK) After the role
+      ansible.builtin.debug:
+        msg: "3️⃣ REGULAR TASK runs after roles"
+
+  post_tasks:
+    - name: (POST) After everything
+      ansible.builtin.debug:
+        msg: "4️⃣ POST_TASK runs last (before handlers)"
+
+  handlers:
+    - name: Final handler
+      ansible.builtin.debug:
+        msg: "🔔 HANDLER runs at the very end"

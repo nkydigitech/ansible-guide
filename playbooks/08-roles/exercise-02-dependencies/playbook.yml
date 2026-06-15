@@ -1,0 +1,6 @@
+---
+- name: Exercise 2 — Role dependencies
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - role: app-role

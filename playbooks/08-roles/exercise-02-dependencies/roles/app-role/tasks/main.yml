@@ -1,0 +1,16 @@
+---
+- name: Create app directory
+  ansible.builtin.file:
+    path: "{{ app_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy app config
+  ansible.builtin.copy:
+    content: "app={{ app_name }}\n"
+    dest: "{{ app_dir }}/config.conf"
+    mode: '0644'
+
+- name: "APP: deployed"
+  ansible.builtin.debug:
+    msg: "App {{ app_name }} deployed. Log dir from common: {{ log_dir }}"

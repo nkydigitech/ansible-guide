@@ -1,0 +1,6 @@
+---
+# Default variables for demo-role (lowest precedence — meant to be overridden)
+demo_app_name: "MyApp"
+demo_version: "1.0.0"
+demo_port: 8080
+demo_home: /tmp/ansible-role-demo

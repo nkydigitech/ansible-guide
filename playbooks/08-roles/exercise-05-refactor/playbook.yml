@@ -1,0 +1,7 @@
+---
+# AFTER: Clean playbook using the refactored role
+- name: Monitor app setup (refactored)
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - role: refactored-app

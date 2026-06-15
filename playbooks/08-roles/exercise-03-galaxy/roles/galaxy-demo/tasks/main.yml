@@ -1,0 +1,19 @@
+---
+- name: Simulate Galaxy role installation
+  ansible.builtin.file:
+    path: /tmp/galaxy-demo
+    state: directory
+    mode: '0755'
+
+- name: Deploy Galaxy-style config
+  ansible.builtin.copy:
+    content: |
+      # Installed from Ansible Galaxy
+      name = {{ galaxy_app_name }}
+      version = {{ galaxy_version }}
+    dest: /tmp/galaxy-demo/config.ini
+    mode: '0644'
+
+- name: Galaxy role complete
+  ansible.builtin.debug:
+    msg: "Galaxy role {{ galaxy_app_name }} v{{ galaxy_version }} deployed"

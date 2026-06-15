@@ -1,0 +1,13 @@
+---
+- name: Create monitor directory
+  ansible.builtin.file:
+    path: "{{ monitor_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Write monitor config
+  ansible.builtin.copy:
+    content: "app={{ monitor_app }}\nport={{ monitor_port }}\n"
+    dest: "{{ monitor_dir }}/config.yml"
+    mode: '0644'
+  notify: Restart monitor

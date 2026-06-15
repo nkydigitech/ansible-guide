@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ web_title }}</title></head>
+<body>
+<h1>{{ web_title }}</h1>
+<p>Running on port {{ web_port }}</p>
+<p>Deployed by Ansible at {{ ansible_date_time.iso8601 | default('now') }}</p>
+</body>
+</html>

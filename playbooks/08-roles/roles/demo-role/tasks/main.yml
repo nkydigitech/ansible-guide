@@ -1,0 +1,23 @@
+---
+- name: Create demo application directory
+  ansible.builtin.file:
+    path: "{{ demo_home }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy templated configuration
+  ansible.builtin.template:
+    src: config.txt.j2
+    dest: "{{ demo_home }}/config.txt"
+    mode: '0644'
+  notify: Simulate service restart
+
+- name: Copy static info file
+  ansible.builtin.copy:
+    src: info.txt
+    dest: "{{ demo_home }}/info.txt"
+    mode: '0644'
+
+- name: Show role-internal variables
+  ansible.builtin.debug:
+    msg: "Role defaults: app={{ demo_app_name }}, version={{ demo_version }}, port={{ demo_port }}"

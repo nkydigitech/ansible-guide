@@ -1,0 +1,4 @@
+---
+monitor_app: prometheus
+monitor_port: 9090
+monitor_dir: /tmp/monitor

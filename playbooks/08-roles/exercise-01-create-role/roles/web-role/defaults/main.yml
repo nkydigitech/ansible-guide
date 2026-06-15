@@ -1,0 +1,4 @@
+---
+web_title: "Ansible Web"
+web_port: 8080
+web_root: /tmp/ansible-web

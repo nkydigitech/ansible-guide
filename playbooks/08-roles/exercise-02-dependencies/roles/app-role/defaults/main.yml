@@ -1,0 +1,3 @@
+---
+app_name: myapp
+app_dir: /tmp/ansible-app

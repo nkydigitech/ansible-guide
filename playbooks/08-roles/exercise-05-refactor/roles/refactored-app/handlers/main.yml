@@ -1,0 +1,4 @@
+---
+- name: Restart monitor
+  ansible.builtin.debug:
+    msg: "Restart {{ monitor_app }} on port {{ monitor_port }}"

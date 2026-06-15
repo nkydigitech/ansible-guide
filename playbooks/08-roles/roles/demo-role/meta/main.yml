@@ -1,0 +1,5 @@
+---
+galaxy_info:
+  author: ansible-guide
+  description: Demo role for learning Ansible roles
+collections: []

@@ -1,0 +1,53 @@
+---
+# Module 08: Roles Demo (localhost-safe)
+# Shows how roles are used in playbooks, with pre_tasks, roles, tasks, post_tasks, handlers.
+# The role creates files under /tmp — no sudo required.
+
+- name: Role execution order demo
+  hosts: localhost
+  gather_facts: no
+  vars:
+    # Override role defaults to prove variable precedence still works inside a role
+    demo_version: "2.1.0"
+    demo_port: 9090
+
+  pre_tasks:
+    - name: (pre_task) Clean up previous run
+      ansible.builtin.file:
+        path: /tmp/ansible-role-demo
+        state: absent
+      changed_when: true
+
+    - name: (pre_task) Announce start
+      ansible.builtin.debug:
+        msg: "🚀 Starting playbook — pre_tasks run BEFORE roles"
+
+  roles:
+    - role: demo-role
+
+  tasks:
+    - name: (task) Verify files were created by role
+      ansible.builtin.stat:
+        path: "{{ item }}"
+      loop:
+        - /tmp/ansible-role-demo/config.txt
+        - /tmp/ansible-role-demo/info.txt
+
+    - name: (task) Show contents of role-generated config
+      ansible.builtin.command: "cat /tmp/ansible-role-demo/config.txt"
+      register: role_config
+      changed_when: false
+
+    - name: (task) Display config
+      ansible.builtin.debug:
+        var: role_config.stdout_lines
+
+  post_tasks:
+    - name: (post_task) Final summary
+      ansible.builtin.debug:
+        msg: "✅ Playbook complete — post_tasks run AFTER all regular tasks"
+
+  handlers:
+    - name: Playbook-level handler
+      ansible.builtin.debug:
+        msg: "🔔 Playbook handler: would do final cleanup"

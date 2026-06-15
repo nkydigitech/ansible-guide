@@ -1,0 +1,4 @@
+---
+- name: Restart fake web server
+  ansible.builtin.debug:
+    msg: "🔄 Handler: fake web server on port {{ web_port }} would restart"

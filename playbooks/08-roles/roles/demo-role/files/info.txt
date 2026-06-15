@@ -1,0 +1,2 @@
+This file was copied from the role's files/ directory.
+Static files go in files/ — templates go in templates/.

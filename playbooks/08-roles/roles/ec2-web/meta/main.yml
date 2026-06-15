@@ -1,0 +1,5 @@
+---
+galaxy_info:
+  author: ansible-guide
+  description: Nginx web server role for EC2 Ubuntu
+collections: []

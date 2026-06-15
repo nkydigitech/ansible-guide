@@ -1,0 +1,17 @@
+---
+- name: Create fake web root
+  ansible.builtin.file:
+    path: "{{ web_root }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy index page template
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: "{{ web_root }}/index.html"
+    mode: '0644'
+  notify: Restart fake web server
+
+- name: Show deployment info
+  ansible.builtin.debug:
+    msg: "Deployed {{ web_title }} to {{ web_root }} on port {{ web_port }}"

@@ -1,0 +1,8 @@
+---
+- name: Exercise 1 — Create a role from scratch
+  hosts: localhost
+  gather_facts: no
+  vars:
+    web_port: 3000
+  roles:
+    - role: web-role

@@ -484,6 +484,41 @@ roles/mywebapp/
 
 **Hint**: This is the most important skill for production Ansible work. The key is extracting all hard-coded values into `defaults/main.yml` variables, making the role configurable.
 
+## Module Review — Test Yourself
+
+??? question "Q1: Which directory inside a role holds the LOWEST-precedence variables that users are meant to override?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        **`defaults/main.yml`**. Variables here have the lowest precedence and are designed to be overridden by play vars, inventory vars, or extra vars.
+
+??? question "Q2: What is the execution order inside a single play?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        `pre_tasks` → `roles` → `tasks` → `post_tasks` → `handlers`
+
+??? question "Q3: If role A lists role B in its `meta/main.yml` dependencies, what happens when you include only role A in a playbook?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        Ansible **automatically includes role B first**, then runs role A. You only list role A in the playbook.
+
+??? question "Q4: What is the difference between `defaults/main.yml` and `vars/main.yml` inside a role?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        - **`defaults/main.yml`** = user-configurable values (lowest precedence, meant to be overridden)
+        - **`vars/main.yml`** = internal role values (higher precedence, not meant to be overridden)
+
+??? question "Q5: Which command scaffolds a new role with the full Galaxy directory structure?"
+    Click to reveal the answer.
+
+    ??? success "Answer"
+        `ansible-galaxy init --init-path roles/ my_role_name`
+
+---
+
 ## Summary
 
 - Roles are the standard Ansible packaging format for reusable automation content.

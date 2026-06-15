@@ -1,0 +1,21 @@
+---
+# Module 08: Real Server Role (EC2)
+# Do NOT run against localhost — it needs sudo and a real package manager.
+# Target an Ubuntu EC2 instance.
+
+- name: Deploy web server using a role
+  hosts: webservers
+  become: true
+
+  vars:
+    page_title: "Module 08 Roles Demo"
+    page_color: "#b967ff"
+
+  roles:
+    - role: ec2-web
+
+  post_tasks:
+    - name: Verify nginx is serving
+      ansible.builtin.uri:
+        url: "http://{{ inventory_hostname }}"
+        status_code: 200

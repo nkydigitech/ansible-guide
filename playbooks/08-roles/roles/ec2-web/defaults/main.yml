@@ -1,0 +1,5 @@
+---
+nginx_package: nginx
+nginx_service: nginx
+page_title: "Deployed by Ansible Role"
+page_color: "#ff2d95"

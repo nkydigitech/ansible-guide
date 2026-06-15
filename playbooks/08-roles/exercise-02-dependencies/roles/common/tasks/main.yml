@@ -1,0 +1,10 @@
+---
+- name: Create shared log directory
+  ansible.builtin.file:
+    path: "{{ log_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: "COMMON: log dir ready"
+  ansible.builtin.debug:
+    msg: "Log directory {{ log_dir }} created by common role"

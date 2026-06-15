@@ -1,0 +1,25 @@
+---
+# BEFORE: Monolithic playbook (everything inline)
+- name: Monitor app setup (monolithic)
+  hosts: localhost
+  gather_facts: no
+  vars:
+    monitor_app: prometheus
+    monitor_port: 9090
+    monitor_dir: /tmp/monitor
+  tasks:
+    - name: Create directory
+      ansible.builtin.file:
+        path: "{{ monitor_dir }}"
+        state: directory
+        mode: '0755'
+    - name: Write config
+      ansible.builtin.copy:
+        content: "app={{ monitor_app }}\nport={{ monitor_port }}\n"
+        dest: "{{ monitor_dir }}/config.yml"
+        mode: '0644'
+      notify: Restart monitor
+  handlers:
+    - name: Restart monitor
+      ansible.builtin.debug:
+        msg: "Restart {{ monitor_app }} on port {{ monitor_port }}"

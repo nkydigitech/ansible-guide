@@ -1,0 +1,4 @@
+---
+- name: (role task) Inside the role
+  ansible.builtin.debug:
+    msg: "👉 ROLE TASK executes"
