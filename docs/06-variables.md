@@ -631,3 +631,11 @@ localhost                  : ok=2    changed=0    unreachable=0    failed=0
 
 3. **Ansible by Red Hat — Variables Deep Dive (Blog)**: https://www.ansible.com/blog/ansible-best-practices-variables
    Real-world patterns for managing variables at scale.
+
+
+   ```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../05-first-playbook/" style="color:#8892b0; text-decoration:none;">← Previous: First Playbook</a>
+  <a href="../07-handlers/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Handlers →</a>
+</div>
+```
