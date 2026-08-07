@@ -1,5 +1,11 @@
 # Ansible Learning Guide
 
+> 🚀 **Nkechi Ahanonye — Cloud & DevOps Engineer | I turn manual, 3 AM-breaking deployments into 1-min automated pipelines with AWS + Ansible + Terraform**
+>
+> **Live Portfolio:** 📦 [ansible_practical – 17 Green Runs ✅](https://github.com/nkydigitech/ansible_practical) | 📖 You are here (Guide) | 🧪 [Student Lab](https://nkydigitech.github.io/ansible-lab/) | 💼 [LinkedIn](https://www.linkedin.com/in/nkechi-ahanonye)
+
+[![Ansible CI/CD Pipeline](https://github.com/nkydigitech/ansible_practical/actions/workflows/cicd.yml/badge.svg)](https://github.com/nkydigitech/ansible_practical/actions)
+
 > "I built this guide because beginners deserve better than scattered tutorials."
 > — Nkechi Ahanonye, Cloud & DevOps Engineer
 
