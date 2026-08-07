@@ -564,3 +564,11 @@ ansible all -i hosts.ini -m file -a "path=/tmp/check_test_dir state=directory" -
 
 3. **Practical Ansible Examples (GitHub)**: https://github.com/ansible/ansible-examples
    Community-maintained collection of Ansible examples, from simple ad-hoc commands to complete deployments.
+
+
+   ```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../02-installation/" style="color:#8892b0; text-decoration:none;">← Previous: Installation</a>
+  <a href="../04-inventory/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Inventory →</a>
+</div>
+```
