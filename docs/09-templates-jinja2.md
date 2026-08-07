@@ -461,3 +461,10 @@ net.bridge.bridge-nf-call-ip6tables = 1
 - [Jinja2 Documentation: Template Designer](https://jinja.palletsprojects.com/en/3.1.x/templates/) — The official Jinja2 template documentation.
 - [Ansible Documentation: Jinja2 Filters](https://docs.ansible.com/ansible/latest/user_guide/templating.html) — All Ansible-specific filters with examples.
 - [Ansible Template Module Documentation](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) — Full reference for the template module parameters.
+
+```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../08-roles/" style="color:#8892b0; text-decoration:none;">← Previous: Roles</a>
+  <a href="../10-conditionals-loops/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Conditionals & Loops →</a>
+</div>
+```
