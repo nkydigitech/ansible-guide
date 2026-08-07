@@ -491,10 +491,9 @@ If your handler fires on the second run, your task is not idempotent. Check what
 - [Ansible Handlers: Complete Guide (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-use-ansible-handlers-and-logic) — A practical tutorial with real-world examples.
 - [Ansible Best Practices: Handler Organization (Red Hat)](https://www.ansible.com/blog/ansible-best-practices-modules) — Guidance on structuring handlers in large playbooks.
 
-```md
-<!-- ===================== MODULE 07 - Handlers - Paste at bottom of docs/07-handlers/index.md ===================== -->
 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
   <a href="../06-variables/" style="color:#8892b0; text-decoration:none;">← Previous: Variables</a>
   <a href="../08-roles/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Roles →</a>
 </div>
-```
+
+
