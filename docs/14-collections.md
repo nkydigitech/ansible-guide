@@ -450,4 +450,11 @@ ansible-playbook -i localhost, -c local myorg/mycollection/playbooks/hello.yml
 
 - [Ansible Collections Documentation](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) - Official guide to using and creating collections
 - [Ansible Galaxy](https://galaxy.ansible.com) - Browse and install thousands of community and vendor collections
-- [Developing Collections](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html) - Detailed guide to building and publishing your own collections
+- [Developing Collections](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html) - Detailed guide to building and publishing your own collections.
+
+```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../13-dynamic-inventory/" style="color:#8892b0; text-decoration:none;">← Previous: Dynamic Inventory</a>
+  <a href="../15-capstone-project/" style="background:#00d4aa; color:#000; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:700;">Next: Capstone Project →</a>
+</div>
+```
