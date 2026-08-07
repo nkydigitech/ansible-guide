@@ -1116,3 +1116,17 @@ The result is a production-ready, three-tier web application deployment that you
 - [Ansible Best Practices](https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html) - Recommended playbook organization patterns
 - [Molecule Documentation](https://molecule.readthedocs.io/) - Testing Ansible roles with Molecule
 - [Ansible LAMP Stack Example](https://docs.ansible.com/ansible/latest/tutorials/) - Official Ansible tutorials for common infrastructure patterns
+
+```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../14-collections/" style="color:#8892b0; text-decoration:none;">← Previous: Collections</a>
+  <div style="display:flex; gap:12px;">
+    <a href="../" style="color:#8892b0; text-decoration:none; border:1px solid #2a3a5c; padding:8px 18px; border-radius:8px;">🏠 Back to Home</a>
+    <a href="https://nkydigitech.github.io/ansible-lab/" style="background:linear-gradient(135deg,#00d4aa,#6c63ff); color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:700;">🧪 Go to Student Lab →</a>
+  </div>
+</div>
+
+<div style="background:linear-gradient(135deg,rgba(108,99,255,0.1),rgba(0,212,170,0.1)); border:1px solid rgba(108,99,255,0.3); border-radius:12px; padding:20px; text-align:center; margin-top:24px;">
+🎉 <strong>Congratulations!</strong> You completed Zero to Production. Build your own project and share it on LinkedIn — tag me!
+</div>
+```
