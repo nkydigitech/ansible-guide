@@ -1,3 +1,7 @@
+<div style="background:linear-gradient(135deg,#6c63ff,#00d4aa); color:#000; padding:14px 20px; text-align:center; font-weight:800; border-radius:12px; margin-bottom:24px; box-shadow:0 8px 30px rgba(108,99,255,0.3);">
+🚀 Nkechi Ahanonye — Cloud & DevOps Engineer | Zero to Production: 15 Modules, Real Output, No Fluff<br>
+<span style="font-weight:600; font-size:0.9rem;">📦 <a href="https://github.com/nkydigitech/ansible_practical" style="color:#000; text-decoration:underline;">17 Green Runs ✅</a> | 📖 You are here (Guide) | 🧪 <a href="https://nkydigitech.github.io/ansible-lab/" style="color:#000; text-decoration:underline;">Student Lab</a> | 💼 <a href="https://www.linkedin.com/in/nkechi-ahanonye" style="color:#000; text-decoration:underline;">LinkedIn</a></span>
+</div>
 ---
 hide:
   - navigation
