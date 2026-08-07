@@ -685,4 +685,12 @@ ansible web[1:2] -i inventory.ini -m ping
    Interactive introduction to inventory concepts with hands-on examples.
 
 3. **Ansible Inventory Generator Patterns**: https://docs.ansible.com/ansible/latest/inventory_guide/intro_patterns.html
+
+
+```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../03-ad-hoc-commands/" style="color:#8892b0; text-decoration:none;">← Previous: Ad-hoc</a>
+  <a href="../05-first-playbook/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: First Playbook →</a>
+</div>
+```
    Comprehensive reference for host patterns, including advanced matching and filtering techniques.
