@@ -263,3 +263,13 @@ ok: [webserver1] => {
 
 3. **Ansible Blog - Getting Started**: https://www.ansible.com/blog/getting-started
    Red Hat's curated resources for Ansible beginners, including webinars, whitepapers, and practical guides.
+
+
+   ---
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../" style="color:#8892b0; text-decoration:none;">← Back to Home</a>
+  <div style="display:flex; gap:12px;">
+    <span style="color:#2a3a5c; padding:8px 18px;">First Module</span>
+    <a href="../02-installation/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Installation →</a>
+  </div>
+</div>
