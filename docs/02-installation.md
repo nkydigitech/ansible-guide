@@ -623,3 +623,11 @@ ansible-galaxy collection list
 
 3. **Ansible Mailing List and Slack Community**: https://docs.ansible.com/ansible/latest/community/
    Connect with other Ansible users, ask questions, and get help with installation issues from experienced practitioners.
+
+
+   ```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../01-introduction/" style="color:#8892b0; text-decoration:none;">← Previous: Introduction</a>
+  <a href="../03-ad-hoc-commands/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Ad-hoc Commands →</a>
+</div>
+```
