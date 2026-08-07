@@ -17,7 +17,7 @@ hide:
   </span>
 </div>
 
-<div style="background:#0a0e1a; border:1px solid #1a2340; border-radius:24px; padding:60px 40px; text-align:center; margin-bottom:40px;">
+<div style="background:#0a0e1a; border:1px solid #1a2340; border-radius:24px; padding:60px 40px; text-align:center; margin-bottom:40px; position:relative; z-index:1;">
 
 <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(108,99,255,0.1); border:1px solid rgba(108,99,255,0.3); color:#6c63ff; font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:6px 16px; border-radius:50px; margin-bottom:28px;">
 🚀 FREE & OPEN SOURCE
@@ -38,7 +38,7 @@ From Zero to Production
 15 hands-on modules. Real playbooks. Actual terminal output. No fluff.
 </p>
 
-<a href="#what-makes-this-different" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#6c63ff,#8b5cf6); color:#fff; font-weight:700; padding:14px 28px; border-radius:12px; text-decoration:none; box-shadow:0 8px 30px rgba(108,99,255,0.4);">
+<a href="01-introduction/" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#6c63ff,#8b5cf6); color:#fff; font-weight:700; padding:14px 28px; border-radius:12px; text-decoration:none; box-shadow:0 8px 30px rgba(108,99,255,0.4); position:relative; z-index:10; cursor:pointer;">
 Start Learning →
 </a>
 
@@ -51,30 +51,103 @@ Start Learning →
 
 </div>
 
-## What makes this different?
+## What makes this different? {#what-makes-this-different}
 
 Every module shows you **exactly what to expect** — real terminal output, not just code blocks. You see what success looks like before you run a single command.
 
-### Modules 01-06: Beginner Foundation
-- **01 Introduction** — What Ansible is, why it exists, and how it thinks differently
-- **02 Installation** — Get Ansible running on Linux, Mac, Windows WSL with verified output
-- **03 Ad-hoc Commands** — Run one-liners against real servers before writing playbooks
-- **04 Inventory** — Tell Ansible which servers to talk to
-- **05 First Playbook** — Write your first YAML playbook and deploy something real
-- **06 Variables** — Define, scope, and override variables
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin:30px 0;">
 
-### Modules 07-11: Intermediate Core
-- **07 Handlers** — Trigger actions only when changes happen
-- **08 Roles** — Organise playbooks into reusable, shareable structures
-- **09 Templates & Jinja2** — Generate dynamic config files
-- **10 Conditionals & Loops** — Control execution with `when` and `loop`
-- **11 Vault** — Encrypt secrets so you can safely commit them to git
+<a href="01-introduction/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#6c63ff; font-weight:700; margin-bottom:8px;">Module 01</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Introduction</div>
+<div style="font-size:0.9rem; color:#8892b0;">What Ansible is, why it exists, and how it thinks differently.</div>
+</a>
 
-### Modules 12-15: Advanced Production
-- **12 Error Handling** — Control failures, rescue broken tasks
-- **13 Dynamic Inventory** — Pull live hosts from AWS, GCP, Azure
-- **14 Collections** — Install and manage Galaxy collections
-- **15 Capstone Project** — Build full production infrastructure from scratch
+<a href="02-installation/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#6c63ff; font-weight:700; margin-bottom:8px;">Module 02</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Installation</div>
+<div style="font-size:0.9rem; color:#8892b0;">Get Ansible running on Linux, Mac, Windows WSL.</div>
+</a>
+
+<a href="03-ad-hoc-commands/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#6c63ff; font-weight:700; margin-bottom:8px;">Module 03</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Ad-hoc Commands</div>
+<div style="font-size:0.9rem; color:#8892b0;">Run one-liners before writing playbooks.</div>
+</a>
+
+<a href="04-inventory/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#6c63ff; font-weight:700; margin-bottom:8px;">Module 04</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Inventory</div>
+<div style="font-size:0.9rem; color:#8892b0;">Tell Ansible which servers to talk to.</div>
+</a>
+
+<a href="05-first-playbook/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#00d4aa; font-weight:700; margin-bottom:8px;">Module 05</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">First Playbook</div>
+<div style="font-size:0.9rem; color:#8892b0;">Write your first YAML playbook.</div>
+</a>
+
+<a href="06-variables/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#00d4aa; font-weight:700; margin-bottom:8px;">Module 06</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Variables</div>
+<div style="font-size:0.9rem; color:#8892b0;">Define, scope, and override variables.</div>
+</a>
+
+<a href="07-handlers/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff8a5c; font-weight:700; margin-bottom:8px;">Module 07</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Handlers</div>
+<div style="font-size:0.9rem; color:#8892b0;">Restart services only when changed.</div>
+</a>
+
+<a href="08-roles/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff8a5c; font-weight:700; margin-bottom:8px;">Module 08</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Roles</div>
+<div style="font-size:0.9rem; color:#8892b0;">Reusable, shareable role structures.</div>
+</a>
+
+<a href="09-templates-jinja2/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff8a5c; font-weight:700; margin-bottom:8px;">Module 09</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Templates & Jinja2</div>
+<div style="font-size:0.9rem; color:#8892b0;">Dynamic config files with Jinja2.</div>
+</a>
+
+<a href="10-conditionals-loops/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff8a5c; font-weight:700; margin-bottom:8px;">Module 10</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Conditionals & Loops</div>
+<div style="font-size:0.9rem; color:#8892b0;">Control execution with when and loop.</div>
+</a>
+
+<a href="11-vault/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff8a5c; font-weight:700; margin-bottom:8px;">Module 11</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Vault</div>
+<div style="font-size:0.9rem; color:#8892b0;">Encrypt secrets AES-256.</div>
+</a>
+
+<a href="12-error-handling/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff6b9d; font-weight:700; margin-bottom:8px;">Module 12</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Error Handling</div>
+<div style="font-size:0.9rem; color:#8892b0;">Rescue broken tasks gracefully.</div>
+</a>
+
+<a href="13-dynamic-inventory/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff6b9d; font-weight:700; margin-bottom:8px;">Module 13</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Dynamic Inventory</div>
+<div style="font-size:0.9rem; color:#8892b0;">Live hosts from AWS, GCP, Azure.</div>
+</a>
+
+<a href="14-collections/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer;">
+<div style="font-size:0.75rem; color:#ff6b9d; font-weight:700; margin-bottom:8px;">Module 14</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Collections</div>
+<div style="font-size:0.9rem; color:#8892b0;">Galaxy collections management.</div>
+</a>
+
+<a href="15-capstone-project/" style="display:block; background:#0d1117; border:1px solid #2a3a5c; border-radius:12px; padding:20px; text-decoration:none; cursor:pointer; border-left:4px solid #00d4aa;">
+<div style="font-size:0.75rem; color:#00d4aa; font-weight:700; margin-bottom:8px;">Module 15 — FINAL</div>
+<div style="font-weight:700; color:#fff; margin-bottom:6px;">Capstone Project</div>
+<div style="font-size:0.9rem; color:#8892b0;">Full production infra from scratch.</div>
+</a>
+
+</div>
 
 ## What you will see in every module
 
