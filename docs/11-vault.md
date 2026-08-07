@@ -316,3 +316,10 @@ You will be prompted for both the old and new passwords.
 - [Ansible Vault Documentation](https://docs.ansible.com/ansible/latest/user_guide/vault.html) - Official Ansible documentation covering all Vault operations
 - [Ansible Vault Best Practices](https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html#vault) - Recommended patterns for using Vault in production
 - [Encrypting Sensitive Data in Ansible](https://www.redhat.com/sysadmin/ansible-vault) - Red Hat sysadmin article with practical examples and security considerations
+
+```md
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
+  <a href="../10-conditionals-loops/" style="color:#8892b0; text-decoration:none;">← Previous: Conditionals</a>
+  <a href="../12-error-handling/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Error Handling →</a>
+</div>
+```
