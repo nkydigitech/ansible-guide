@@ -448,9 +448,7 @@ keyed_groups:
 - [AWS EC2 Inventory Plugin](https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html) - Detailed configuration options for the AWS EC2 plugin
 - [Dynamic Inventory Examples](https://github.com/ansible/ansible/tree/devel/contrib/inventory) - Example inventory scripts for various cloud providers and infrastructure types
 
-```md
 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
   <a href="../12-error-handling/" style="color:#8892b0; text-decoration:none;">← Previous: Error Handling</a>
   <a href="../14-collections/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Collections →</a>
 </div>
-```
