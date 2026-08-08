@@ -361,9 +361,7 @@ When the task fails, you enter an interactive prompt where you can run Python co
 - [Ansible Blocks Deep Dive](https://www.ansible.com/blog/ansible-by-example-part-5) - Practical examples of block/rescue/always patterns from Ansible Blog
 - [Debugging Ansible Playbooks](https://docs.ansible.com/ansible/latest/user_guide/playbooks_debugger.html) - Using the debugger to inspect and fix failures interactively
 
-```md
 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
   <a href="../11-vault/" style="color:#8892b0; text-decoration:none;">← Previous: Vault</a>
   <a href="../13-dynamic-inventory/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Dynamic Inventory →</a>
 </div>
-```
