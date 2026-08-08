@@ -590,9 +590,7 @@ Generate a numeric sequence:
 - [Ansible Documentation: Loops](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html) — All loop types with examples.
 - [Ansible Documentation: Block / Rescue / Always](https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html) — Error handling with blocks in detail.
 
-```md
 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
   <a href="../09-templates-jinja2/" style="color:#8892b0; text-decoration:none;">← Previous: Templates</a>
   <a href="../11-vault/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Vault →</a>
 </div>
-```
