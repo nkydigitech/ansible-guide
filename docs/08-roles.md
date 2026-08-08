@@ -536,9 +536,7 @@ roles/mywebapp/
 - [Ansible Galaxy](https://galaxy.ansible.com) — The community hub for discovering and sharing roles.
 - [Ansible Best Practices: Roles and Includes (Red Hat)](https://www.ansible.com/blog/ansible-best-practices-roles) — Real-world guidance on structuring roles for large deployments.
 
-```md
 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:50px; padding-top:24px; border-top:1px solid #2a3a5c;">
   <a href="../07-handlers/" style="color:#8892b0; text-decoration:none;">← Previous: Handlers</a>
   <a href="../09-templates-jinja2/" style="background:#6c63ff; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:600;">Next: Templates →</a>
 </div>
-```
