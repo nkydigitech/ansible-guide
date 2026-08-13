@@ -7,12 +7,14 @@
 <h1 align="center">Ansible Zero to Production — Complete 15-Module Masterclass</h1>
 <p align="center"><strong>From Beginner to Production-Ready Infrastructure Automation</strong></p>
 
-> 🚀 **Nkechi Ahanonye — Cloud & DevOps Engineer | I turn manual, 3 AM-breaking deployments into 1-min automated pipelines with AWS + Ansible + Terraform**
+> 🚀 **Nkechi Anna Ahanonye — Cloud & DevOps Engineer | AWS · Ansible · Terraform · K8s | Training the Next Generation of African DevOps Engineers | Open to Remote Roles**
+
+For DevOps students who need relatable, hands-on examples — not textbook theory.
 >
 > **Live Portfolio:** 📦 [ansible_practical – 17 Green Runs ✅](https://github.com/nkydigitech/ansible_practical) | 📖 You are here (Guide) | 🧪 [Student Lab](https://nkydigitech.github.io/ansible-lab/) | 💼 [LinkedIn](https://www.linkedin.com/in/nkechiahanonye)
 
 <p align="center">
-  <a href="https://github.com/nkydigitech/ansible_practical/actions/workflows/cicd.yml"><img src="https://github.com/nkydigitech/ansible_practical/actions/workflows/cicd.yml/badge.svg" alt="CI/CD Pipeline" /></a>
+  <a href="https://github.com/nkydigitech/ansible_practical/actions/workflows/ansible-cicd.yml"><img src="https://github.com/nkydigitech/ansible_practical/actions/workflows/ansible-cicd.yml/badge.svg" alt="CI/CD Pipeline" /></a>
   <a href="https://nkydigitech.github.io/ansible-guide/"><img src="https://img.shields.io/badge/Live%20Site-Online-00d4aa?style=flat-square&logo=githubpages" /></a>
   <a href="#"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" /></a>
   <a href="#"><img src="https://img.shields.io/badge/100%25%20Free-Forever-6c63ff?style=flat-square" /></a>
