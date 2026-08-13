@@ -9,7 +9,7 @@
 
 > 🚀 **Nkechi Ahanonye — Cloud & DevOps Engineer | I turn manual, 3 AM-breaking deployments into 1-min automated pipelines with AWS + Ansible + Terraform**
 >
-> **Live Portfolio:** 📦 [ansible_practical – 17 Green Runs ✅](https://github.com/nkydigitech/ansible_practical) | 📖 You are here (Guide) | 🧪 [Student Lab](https://nkydigitech.github.io/ansible-lab/) | 💼 [LinkedIn](https://www.linkedin.com/in/nkechi-ahanonye)
+> **Live Portfolio:** 📦 [ansible_practical – 17 Green Runs ✅](https://github.com/nkydigitech/ansible_practical) | 📖 You are here (Guide) | 🧪 [Student Lab](https://nkydigitech.github.io/ansible-lab/) | 💼 [LinkedIn](https://www.linkedin.com/in/nkechiahanonye)
 
 <p align="center">
   <a href="https://github.com/nkydigitech/ansible_practical/actions/workflows/cicd.yml"><img src="https://github.com/nkydigitech/ansible_practical/actions/workflows/cicd.yml/badge.svg" alt="CI/CD Pipeline" /></a>
@@ -149,7 +149,7 @@ All contributors get credit.
 
 I build infrastructure that doesn't break at 2 AM. 15 years running a cybercafe taught me: real users don't care about your stack, they care that things just work.
 
-- **LinkedIn:** [linkedin.com/in/nkechi-ahanonye](https://www.linkedin.com/in/nkechi-ahanonye)
+- **LinkedIn:** [linkedin.com/in/nkechiahanonye](https://www.linkedin.com/in/nkechiahanonye)
 - **GitHub:** [github.com/nkydigitech](https://github.com/nkydigitech)
 - **Portfolio:** [nkydigitech.github.io/nky-portfolio](https://nkydigitech.github.io/nky-portfolio/)
 - **Live Practical:** [ansible_practical – 17 Green Runs ✅](https://github.com/nkydigitech/ansible_practical)
