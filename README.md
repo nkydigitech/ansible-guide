@@ -147,7 +147,7 @@ All contributors get credit.
 
 ### 👩🏽‍💻 Author — Nkechi Anna Ahanonye
 
-**Cloud & DevOps Engineer | Nkydigitech | Training the Next Generation of African DevOps Engineers**
+**Cloud & DevOps Engineer | I turn manual, 3 AM-breaking deployments into 1-min automated pipelines with AWS + Ansible + Terraform | Featured: 15-Module Ansible Lab with real terminal**
 
 I build infrastructure that doesn't break at 2 AM. 15 years running a cybercafe taught me: real users don't care about your stack, they care that things just work.
 
