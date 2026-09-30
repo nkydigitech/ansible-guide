@@ -165,7 +165,7 @@ PLAY RECAP *****************************************************<br>
 
 ## About the author
 
-**Nkechi Ahanonye — Cloud & DevOps Engineer | I turn manual, 3 AM-breaking deployments into 1-min automated pipelines with AWS + Ansible + Terraform**
+**Nkechi Ahanonye — Cloud & DevOps Engineer | I turn 3 AM-breaking deployments into 1-min pipelines with AWS + Ansible + Terraform**
 
 DevOps practitioner passionate about making complex engineering accessible. This guide is part of the trilogy: [Practical (17 Green Runs)](https://github.com/nkydigitech/ansible_practical) → Guide → [Lab](https://nkydigitech.github.io/ansible-lab/)
 
