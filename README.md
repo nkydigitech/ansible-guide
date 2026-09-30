@@ -149,7 +149,7 @@ All contributors get credit.
 
 **Cloud & DevOps Engineer | I turn 3 AM-breaking deployments into 1-min pipelines with AWS + Ansible + Terraform | Building security-first AI agents on Amazon Bedrock AgentCore | AI Governance on AWS certified**
 
-I build infrastructure that doesn't break at 2 AM. 15 years running a cybercafe taught me: real users don't care about your stack, they care that things just work.
+I build infrastructure that doesn't break at 3 AM. 15 years running a cybercafe taught me: real users don't care about your stack, they care that things just work.
 
 - **LinkedIn:** [linkedin.com/in/nkechiahanonye](https://www.linkedin.com/in/nkechiahanonye)
 - **GitHub:** [github.com/nkydigitech](https://github.com/nkydigitech)

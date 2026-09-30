@@ -13,7 +13,7 @@ hide:
     <span style="opacity:0.4;">|</span>
     <a href="https://nkydigitech.github.io/ansible-lab/" style="color:#6c63ff; text-decoration:none; font-weight:600;">🧪 Student Lab</a>
     <span style="opacity:0.4;">|</span>
-    <a href="https://www.linkedin.com/in/nkechi-ahanonye" style="color:#e8eaf6; text-decoration:none; font-weight:600;">💼 LinkedIn</a>
+    <a href="https://www.linkedin.com/in/nkechiahanonye" style="color:#e8eaf6; text-decoration:none; font-weight:600;">💼 LinkedIn</a>
   </span>
 </div>
 
@@ -169,4 +169,4 @@ PLAY RECAP *****************************************************<br>
 
 DevOps practitioner passionate about making complex engineering accessible. This guide is part of the trilogy: [Practical (17 Green Runs)](https://github.com/nkydigitech/ansible_practical) → Guide → [Lab](https://nkydigitech.github.io/ansible-lab/)
 
-[LinkedIn](https://www.linkedin.com/in/nkechi-ahanonye) | [GitHub](https://github.com/nkydigitech)
+[LinkedIn](https://www.linkedin.com/in/nkechiahanonye) | [GitHub](https://github.com/nkydigitech)
